@@ -1,53 +1,43 @@
-# Celo Wallet For Web and Desktop
+# Celo-hackathon
 
-A lightweight, self-sovereign wallet for the Celo network. Manage small accounts [on the web](https://celowallet.app) or large ones [on your desktop.](https://github.com/celo-tools/celo-web-wallet/releases) Fully compatible with Ledger hardware.
+2021 Celo-mobile-hackathon
 
-## Desktop Downloads
+## 대회 설명
 
-The desktop downloads for Mac, Windows, and Linux are hosted here in the [releases page](https://github.com/celo-tools/celo-web-wallet/releases).
+[Make it Mobile Hackathon - Celo](https://gitcoin.co/hackathon/mobile-celo/onboard)
 
-## Frequently Asked Questions
+We are calling on all builders, designers, and innovators to come help us take the Celo ecosystem to the next level. Celo is founded on the tenant of "Design For All" and our mobile-first approach is our embodiment of this commitment. We are looking for teams to adopt this vision and build DApps, tools, and tutorials around this principle. The Hackathon will highlight teams from around the world with Celo-based DApps serving tens of thousands of users such as Impact Market and Moola Market!
 
-See the [FAQ](FAQ.md) for more details about common questions.
+We’ll be offering a number of prizes for Defi DAPPs, cross-chain architecture projects, technical documentation, community building media, educational content, and much more!
 
-## Bundle integrity hashes
+In addition, there will be bonus prizes for teams that truly go above and beyond! Below you’ll find a list of the bonus awards we’ve finalized so far. These will be awarded to exemplary teams in addition to the bounty prizes originally posted.
 
-This wallet uses [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity). Current bundle hashes:
+## 역할
 
-* Main bundle: `bundle.js -> sha256-LaJJ2WeP9E9zPbXIu6soIsCg2pS5WRnZKujfEGAuMZY=`
-* Optional Ledger bundle: `bundle-ledger.js -> sha256-gyjTPsWBD1Fqoag13jj1/Z1o8tsAIJ/pAbYGKqZ7IC4=`
+프론트엔드: 김나연[(@naaa187)](https://github.com/naaa187), 박영빈[(@qkrybin)](https://github.com/qkrybin)
 
-Advanced users can verify the source integrity by comparing the hashes in their page source to these values.
+백엔드, 블록체인: 여수현[(@soohyun99)](https://github.com/soohyun99), 최승원[(@seungwon2)](https://github.com/seungwon2)
 
-## Building and running locally
+# Commit 규칙
 
-First install dependencies:
+## 기본
 
-```sh
-yarn install 
+- [gitmoji] <타입> : 커밋 메세지
+- 시작은 `명령문`으로 작성 ( ex) add, fix)
+- 모두 `소문자`로 작성
+- 끝에 `마침표` 금지
+- `"어떻게"` 말고, `"무엇을"` 했는지 설명
+
+## 구체화
+
+```js
+:sparkles: feat : 기능 (새로운 기능)
+:bug: fix : 버그 (버그 수정)
+:recycle: refactor : 리팩토링
+:lipstick: style : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)
+:memo: docs : 문서 (문서 추가, 수정, 삭제)
+:rocket: test : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)
+:bulb: chore : 기타 변경사항 (빌드 스크립트 수정 등)
+:construction: bug : 버그 발견, 공사중
+:building_construction: build : 프로젝트 구조 빌드 관련
 ```
-
-### Running in a browser
-
-To create and run a development build in a browser (recommended for development):
-
-```sh
-yarn dev
-```
-
-### Running in Electron
-
-To build for electron and run in a desktop app:
-
-```sh
-yarn electron:dev
-```
-
-## Contributing
-
-For small contributions such as bug fixes or style tweaks, please open a Pull Request.
-For new features, please create an issue to start a discussion on [Discord](https://discord.com/channels/600834479145353243/812471799585439794).
-
-## License
-
-This project is [MIT Licensed](LICENSE).
