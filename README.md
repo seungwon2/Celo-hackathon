@@ -18,6 +18,16 @@ In addition, there will be bonus prizes for teams that truly go above and beyond
 
 백엔드, 블록체인: 여수현[(@soohyun99)](https://github.com/soohyun99), 최승원[(@seungwon2)](https://github.com/seungwon2)
 
+# 협업 규칙
+
+## 작업 방식
+
+1. 이 레포지토리를 `fork` 한다.
+2. `fork`한 레포지토리를 `git clone`명령어로 `local`에 복사한다.
+3. `git checkout -b <branch 이름>` 으로 새로운 브랜치를 만든다.
+4. 작업을 완료한 후에는 `pull request` 메뉴를 이용해 `fork` 된 레포지토리에서에서 메인 레포지토리로 `pull request`를 날린다.
+5. `merge` 작업의 경우 한 사람이 실시한다.
+
 # Commit 규칙
 
 ## 기본
