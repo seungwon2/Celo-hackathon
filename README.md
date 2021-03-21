@@ -72,7 +72,7 @@ In addition, there will be bonus prizes for teams that truly go above and beyond
 
 ## ✨ Task
 
-```
+```js
 1. 장고 서버 제작
 2. NFT 생성
 3. Account 연결, celo wallet에서 정보 받아오기
