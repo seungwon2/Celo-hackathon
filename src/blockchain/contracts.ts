@@ -1,6 +1,7 @@
 import { Contract } from 'ethers'
 import { ABI as AccountsAbi } from 'src/blockchain/ABIs/accounts'
 import { ABI as ElectionAbi } from 'src/blockchain/ABIs/election'
+import { ABI as Erc721Abi } from 'src/blockchain/ABIs/erc721'
 import { ABI as EscrowAbi } from 'src/blockchain/ABIs/escrow'
 import { ABI as ExchangeAbi } from 'src/blockchain/ABIs/exchange'
 import { ABI as GoldTokenAbi } from 'src/blockchain/ABIs/goldToken'
@@ -24,6 +25,8 @@ export function getContract(c: CeloContract) {
   const signer = getSigner().signer
   const address = config.contractAddresses[c]
   const abi = getContractAbi(c)
+  console.log(abi)
+  console.log('erc', Erc721Abi)
   const contract = new Contract(address, abi, signer)
   contractCache[c] = contract
   return contract
