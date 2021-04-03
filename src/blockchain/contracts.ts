@@ -25,8 +25,6 @@ export function getContract(c: CeloContract) {
   const signer = getSigner().signer
   const address = config.contractAddresses[c]
   const abi = getContractAbi(c)
-  console.log(abi)
-  console.log('erc', MarkAtTokenAbi)
   const contract = new Contract(address, abi, signer)
   contractCache[c] = contract
   return contract
