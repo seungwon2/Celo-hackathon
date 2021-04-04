@@ -20,15 +20,12 @@ export function ViewWalletScreen() {
   }
   const handleOnClick = () => {
     const test = getContract(CeloContract.MarkAtToken)
-    console.log(address)
-    console.log(
-      'test',
-      test.awardItem(
-        address,
-        'https://ipfs.io/ipfs/QmZBvndhGwA4QVMt8RkwdF1ex5SRLyXPbrB1U1ErNR1JvL?filename=footprint.json'
-      ),
-      test.ownerOf(89609)
+    const log = test.awardItem(
+      address,
+      'https://ipfs.io/ipfs/QmZBvndhGwA4QVMt8RkwdF1ex5SRLyXPbrB1U1ErNR1JvL?filename=footprint.json'
     )
+    console.log('balance: ', test.balanceOf(address))
+    console.log('list', test.tokenOfOwnerByIndex(address, 1))
   }
 
   return (
