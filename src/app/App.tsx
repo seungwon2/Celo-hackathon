@@ -13,7 +13,7 @@ import { TransactionReview } from 'src/features/feed/TransactionReview'
 import { GovernanceConfirmationScreen } from 'src/features/governance/GovernanceConfirmationScreen'
 import { GovernanceFormScreen } from 'src/features/governance/GovernanceFormScreen'
 import { HomeNavigator } from 'src/features/home/HomeNavigator'
-import { HomeScreen } from 'src/features/home/HomeScreen'
+import { HomeScreen } from 'src/features/home/maHomeScreen'
 import { LockConfirmationScreen } from 'src/features/lock/LockConfirmationScreen'
 import { LockFormScreen } from 'src/features/lock/LockFormScreen'
 import { LoginScreen } from 'src/features/login/loginScreen'
@@ -26,6 +26,9 @@ import { OnboardingNavigator } from 'src/features/onboarding/OnboardingNavigator
 import { SetPincodeScreen } from 'src/features/onboarding/pincode/SetPincodeScreen'
 import { WelcomeScreen } from 'src/features/onboarding/welcome/WelcomeScreen'
 import { ChangePincodeScreen } from 'src/features/pincode/ChangePincodeScreen'
+import DetailMarketPage from 'src/features/sellerprofile/marketDetail'
+import MarketRegister from 'src/features/sellerprofile/marketRegister'
+import UploadPictures from 'src/features/sellerprofile/UploadPictures'
 import { SendConfirmationScreen } from 'src/features/send/SendConfirmationScreen'
 import { SendFormScreen } from 'src/features/send/SendFormScreen'
 import { SettingsScreen } from 'src/features/settings/SettingsScreen'
@@ -34,6 +37,7 @@ import { StakeConfirmationScreen } from 'src/features/validators/StakeConfirmati
 import { StakeFormScreen } from 'src/features/validators/StakeFormScreen'
 import { WalletScreenTest } from 'src/features/wallet/WalletScreenTest'
 import { useBrowserFeatureChecks } from 'src/utils/browsers'
+
 
 function Router(props: PropsWithChildren<any>) {
   // The BrowserRouter works everywhere except windows so using hash for electron
@@ -77,6 +81,9 @@ export const App = () => {
               <Route path="settings" element={<SettingsScreen />} />
               <Route path="register" element={<RegisterScreen/>} />
               <Route path="seller-login" element={<LoginScreen/>} />
+              <Route path="market-image" element={<UploadPictures />}/>
+              <Route path="market-detail" element={<DetailMarketPage/>}/>
+              <Route path="market-register" element={<MarketRegister/>}/>
             </Route>
 
             <Route path="/setup" element={<OnboardingNavigator />}>
