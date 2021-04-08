@@ -1,7 +1,5 @@
 import { PropsWithChildren } from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import { Button } from 'src/components/buttons/Button'
-import PlusIcon from 'src/components/icons/plus.svg'
 import { Box } from 'src/components/layout/Box'
 import { HeaderFrame } from 'src/components/layout/nana_HeaderFrame'
 import { NavButtonRow } from 'src/components/layout/NavButtonRow'
@@ -149,11 +147,6 @@ function MobileNotHome(props: PropsWithChildren<any>) {
 
   return (
     <Box direction="row" styles={style.contentContainer}>
-      <Box direction="column" align="center" styles={style.feedContainer}>
-        <Button onClick={onButtonClick} margin="0.75em 0" size="icon" width="34px" height="34px">
-          <img width="22px" height="22px" src={PlusIcon} alt="Plus" />
-        </Button>
-      </Box>
       <div css={style.childContent}>{props.children}</div>
     </Box>
   )
