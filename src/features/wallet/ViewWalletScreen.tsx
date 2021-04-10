@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { getContract } from 'src/blockchain/contracts'
 import { Button } from 'src/components/buttons/Button'
@@ -10,22 +11,40 @@ import { WalletDetails } from 'src/features/wallet/WalletDetails'
 import { Color } from 'src/styles/Color'
 import { Font } from 'src/styles/fonts'
 import { Stylesheet } from 'src/styles/types'
-
 export function ViewWalletScreen() {
   const navigate = useNavigate()
   const address = useWalletAddress()
-
+  const [testImage, setTestImage] = useState('')
+  useEffect(() => {
+    getData().then(function (data: any) {
+      console.log(data) // response 값 출력
+      setTestImage(data)
+    })
+  }, [])
   const onClickBack = () => {
     navigate(-1)
   }
   const handleOnClick = () => {
-    const test = getContract(CeloContract.MarkAtToken)
-    const log = test.awardItem(
-      address,
-      'https://ipfs.io/ipfs/QmZBvndhGwA4QVMt8RkwdF1ex5SRLyXPbrB1U1ErNR1JvL?filename=footprint.json'
-    )
-    console.log('balance: ', test.balanceOf(address))
-    console.log('list', test.tokenOfOwnerByIndex(address, 1))
+    // console.log(
+    //   test.testMint(
+    //     'test1',
+    //     address,
+    //     'https://ipfs.io/ipfs/QmQxtsnSTtWhFN8cP3hg2jZaTcCBxNFK3gNg7zcFUWtrK7'
+    //   )
+    // )
+    // console.log(Metadata[0])
+    // console.log('totalSupply: ', test.totalSupply())
+    // console.log('tokenOfOwnerByIndex: ', test.tokenOfOwnerByIndex(address, 1))
+    // console.log('balanceOf: ', test.balanceOf(address))
+    // console.log('tokenByIndex: ', test.tokenByIndex(1))
+    // console.log(json.image)
+    // console.log('tokenURI: ', test.tokenURI(3))
+  }
+
+  const test = getContract(CeloContract.MarkAtToken)
+
+  function getData() {
+    return test.tokenURI(test.totalSupply())
   }
 
   return (
@@ -34,6 +53,7 @@ export function ViewWalletScreen() {
         <h2 css={style.header}>Your Celo Account</h2>
         <WalletDetails />
 
+        <img src={testImage} />
         <Button
           color={Color.altGrey}
           icon={ArrowBackIcon}
