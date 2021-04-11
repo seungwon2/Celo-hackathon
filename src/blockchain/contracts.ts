@@ -54,6 +54,8 @@ function getContractAbi(c: CeloContract) {
       return StableTokenAbi
     case CeloContract.Validators:
       return ValidatorsAbi
+    case CeloContract.MarkAtToken:
+      return Erc721Abi
     default:
       throw new Error(`No ABI for contract ${c}`)
   }
