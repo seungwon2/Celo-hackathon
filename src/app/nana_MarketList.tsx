@@ -1,4 +1,5 @@
-import * as React from 'react'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Box } from 'src/components/layout/Box'
 import { ScreenContentFrame } from 'src/components/layout/ScreenContentFrame'
@@ -46,6 +47,20 @@ export function MarketList() {
       nft: 2,
     },
   ]
+
+  const [bigMarket, setBigMarket] = useState([])
+
+  useEffect(() => {
+    axios
+      .get(`http://ec2-3-34-14-143.ap-northeast-2.compute.amazonaws.com:8000/server/bigmarket/1/`)
+      .then(({ data }) => {
+        setBigMarket(data.store)
+        console.log(data.store)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }, [])
 
   const ListComponent = (list: ListProps) => (
     <Box>
