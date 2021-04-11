@@ -8,7 +8,7 @@ import { mq } from 'src/styles/mediaQueries';
 import { Stylesheet } from 'src/styles/types';
 
 export function RegisterForm( setIsLoggedIn: any) {
-  const [form, setForm] = useState({ id: "", pw: "",username:"" });
+  const [form, setForm] = useState({ id: "", pw: "",email:"",nickname:"" });
 
   const handleFormChange = (e:any) => {
     setForm({
@@ -17,7 +17,7 @@ export function RegisterForm( setIsLoggedIn: any) {
     });
   };
   const resetForm = () => {
-    setForm({ id:"", pw:"",username:"" });
+    setForm({ id:"", pw:"",email:"", nickname:"" });
   };
   // const validCheck = () => {
   //   if (form.email.length === 0 || form.pw.length === 0||form.id.length === 0) {
@@ -30,15 +30,15 @@ export function RegisterForm( setIsLoggedIn: any) {
     console.log(form);
     //if (!validCheck) return;
     axios
-      .post(`http://ec2-3-34-14-143.ap-northeast-2.compute.amazonaws.com:8000/api/auth/register/`, form)
+      .post(`http://ec2-3-34-14-143.ap-northeast-2.compute.amazonaws.com:8000/server/create/`, form)
       .then(function (response) {
         console.log(response);
-        alert("signup success!");
+        alert("sign up success!");
         setIsLoggedIn(true);
       })
       .catch(function (error) {
         resetForm();
-        alert("login fail!");
+        alert("sign up fail!");
         console.log(error);
       });
   };
@@ -47,23 +47,13 @@ export function RegisterForm( setIsLoggedIn: any) {
     <Box direction="column" align="center">
       <div css={style.formContent}>
         <Box direction="column" styles={style.inputContainer}>
-        <Box direction="row" margin="2em 0 0 0">
+          <Box direction="row" margin="2em 0 0 0">
             <span css={style.inputLabel}>ID</span>
             <input
               css={{...style.input }}
               name="id"
               type="text"
               value={form.id}
-              onChange={handleFormChange}
-            />
-          </Box>
-          <Box direction="row" margin="2em 0 0 0">
-            <span css={style.inputLabel}>USERNAME</span>
-            <input
-              css={{...style.input }}
-              name="username"
-              type="text"
-              value={form.username}
               onChange={handleFormChange}
             />
           </Box>
@@ -75,6 +65,27 @@ export function RegisterForm( setIsLoggedIn: any) {
               value={form.pw}
               onChange={handleFormChange}
               type="text"
+            />
+          </Box>
+          <Box direction="row" margin="2em 0 0 0">
+            <span css={style.inputLabel}>NICKNAME</span>
+            <input
+              css={{...style.input }}
+              name="nickname"
+              type="text"
+              value={form.nickname}
+              onChange={handleFormChange}
+            />
+          </Box>
+
+          <Box direction="row" margin="2em 0 0 0">
+            <span css={style.email}>EMAIL</span>
+            <input
+              css={{...style.input }}
+              name="email"
+              type="text"
+              value={form.email}
+              onChange={handleFormChange}
             />
           </Box>
         </Box>
