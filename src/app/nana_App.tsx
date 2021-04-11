@@ -2,6 +2,9 @@ import { PropsWithChildren, useState } from 'react'
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import { BadBrowserScreen } from 'src/app/BadBrowserScreen'
 import { ErrorBoundary } from 'src/app/FailScreen'
+import { MarketList } from 'src/app/nana_MarketList'
+import { MarketMap } from 'src/app/nana_MarketMap'
+import MarketReg from 'src/app/nana_MarketReg'
 import { MyPage } from 'src/app/nana_myPage1'
 import { MyPageforSeller } from 'src/app/nana_myPage2'
 import { NFTpage } from 'src/app/nana_NFTpage'
@@ -68,8 +71,12 @@ export const App_2 = () => {
           <Routes>
             <Route path="/" element={<HomeNavigator />}>
               <Route path="NFTpage" element={<NFTpage />} />
+              <Route path="NFTpaint" element={<NFTpaint />} />
+              <Route path="MarketMap" element={<MarketMap />} />
               <Route path="MyPage" element={<MyPage />} />
               <Route path="MyPageforSeller" element={<MyPageforSeller />} />
+              <Route path="MarketList" element={<MarketList />} />
+              <Route path="MarketRegister" element={<MarketReg />} />
               <Route path="/" element={<HomeScreen />} />
               <Route path="tx" element={<TransactionReview />} />
               <Route path="send" element={<SendFormScreen />} />
