@@ -8,7 +8,7 @@ import MarketReg from 'src/app/nana_MarketReg'
 import { MyPage } from 'src/app/nana_myPage1'
 import { MyPageforSeller } from 'src/app/nana_myPage2'
 import { NFTpage } from 'src/app/nana_NFTpage'
-import { NFTpaint } from 'src/app/nana_NFTpaint'
+//import { NFTpaint } from 'src/app/nana_NFTpaint'
 import { NotFoundScreen } from 'src/app/NotFoundScreen'
 import { useSplashScreen } from 'src/app/splash'
 import { UpdateBanner } from 'src/app/UpdateBanner'
@@ -92,7 +92,7 @@ export const App_2 = () => {
             <Route path="/setup" element={<OnboardingNavigator />}>
               <Route path="/" element={<WelcomeScreen />} />
               <Route path="NFTpage" element={<NFTpage />} />
-              <Route path="NFTpaint" element={<NFTpaint />} />
+              {/*<Route path="NFTpaint" element={<NFTpaint />} />*/}
               <Route path="new" element={<NewWalletScreen />} />
               <Route path="existing" element={<ImportChoiceScreen />} />
               <Route path="import" element={<ImportWalletScreen />} />
