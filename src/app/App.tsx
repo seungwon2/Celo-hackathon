@@ -50,7 +50,7 @@ function Router(props: PropsWithChildren<any>) {
 export const App = () => {
   const showSplash = useSplashScreen()
   const isBrowserSupported = useBrowserFeatureChecks()
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [user,setUser] = useState(false);
   // Don't load the app until we're done with the splash screen
   if (showSplash) return null
@@ -82,7 +82,7 @@ export const App = () => {
               <Route path="seller-register" element={<RegisterScreen/>} />
               <Route path="store-detail" element={<StoreDetailPage/>}/>
               <Route path="market-register" element={<MarketReg/>}/>
-              <Route path="seller-login" element={<LoginForm {...{ setIsLoggedIn }}/>}/>
+              <Route path="seller-login" element={<LoginForm setIsLoggedIn ={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>}/>
             </Route>
               
 

@@ -4,7 +4,7 @@ import { ScreenContentFrame } from 'src/components/layout/ScreenContentFrame';
 import MarketInfo from './utils/MarketInfo';
 
 
-export default function StoreDetailPage() {
+export default function StoreDetailPage(props:any) {
     //const storeId = props.marketId
     const [Store, setStore] = useState({ id: 1,name:"",location:"",desc:"",categ:"",period:"",hour:"",website:"",mainpic:"",pic1:"",pic2:"",pic3:"",clap:0});
 

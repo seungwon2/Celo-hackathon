@@ -10,7 +10,9 @@ import { Box } from 'src/components/layout/Box';
 import { mq } from 'src/styles/mediaQueries';
 import { Stylesheet } from 'src/styles/types';
 
-export function LoginForm( setIsLoggedIn: any) {
+export function LoginForm( setIsLoggedIn: any, isLoggedIn: any) {
+  console.log(setIsLoggedIn)
+  console.log(isLoggedIn)
   const [form, setForm] = useState({ id: "", pw: "" });
   const navigate = useNavigate()
   const handleFormChange = (e:any) => {
