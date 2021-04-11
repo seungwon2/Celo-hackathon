@@ -9,8 +9,8 @@ export function NFTpage() {
   const isMobile = useIsMobile()
   const navigate = useNavigate()
 
-  const onClickCreateNew = () => {
-    navigate('/setup/NFTpaint')
+  const onClickMove = () => {
+    navigate('/NFTpaint')
   }
 
   const nfts = [
@@ -29,52 +29,31 @@ export function NFTpage() {
   ]
 
   return (
-    <Box direction="column" justify="start" styles={style.frame}>
-      <Box direction="column" justify="start" align="start">
+    <Box direction="column" justify="start">
+      <Box direction="column" justify="start" align="center">
         <h1 css={style.h1}>{`My ${isMobile ? '' : 'simple '}NFT`}</h1>
-        <div css={style.buttonContainer}>
-          <Button
-            size="s"
-            onClick={onClickCreateNew}
-            margin="0.5em 1em"
-            styles={{ fontSize: '1.1em' }}
-          >
-            Mark Paint
-          </Button>
-        </div>
+        <Button onClick={onClickMove} styles={style.buttonContainer}>
+          Go to My NFT Paint
+        </Button>
       </Box>
       <Box direction="row" justify="center" align="center">
-        <div css={style.nftContainer}>
-          {nfts.map((nft) => (
-            <img key={nft.tokenId} src={nft.imageUrl} css={style.nfts} />
-          ))}
-        </div>
+        {nfts.map((nft) => (
+          <div key={nft.tokenId} css={style.nftContainer}>
+            <img src={nft.imageUrl} css={style.nfts} />
+          </div>
+        ))}
       </Box>
     </Box>
   )
 }
 
 const style: Stylesheet = {
-  frame: {
-    minHeight: '100vh',
-    backgorund: 'blue',
-    backgroundImage: `url("static/celo-hero.jpg")`,
-  },
-  topPadding: {
-    height: '3em',
-    [mq[768]]: {
-      height: '3em',
-    },
-  },
-  logo: {
-    maxWidth: '75%',
-  },
   h1: {
     ...Font.h1,
     ...Font.bold,
     fontSize: '1.5em',
     margin: '0.5em 0.5em 0.5em 0.5em',
-    textAlign: 'start',
+    textAlign: 'center',
     maxWidth: '95%',
     [mq[768]]: {
       fontSize: '1.5em',
@@ -82,22 +61,29 @@ const style: Stylesheet = {
     },
   },
   buttonContainer: {
-    marginTop: '1em',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'start',
-    alignItems: 'start',
+    margin: '0.5em 0.5em 1em 0.5em',
+    width: '7em',
+    minWidth: '15em',
+    height: '2.8em',
+    background: 'linear-gradient(0.25turn,rgba(247,214,55),rgba(47,207,87))',
+    borderRadius: 50,
+    fontSize: '1.1em',
     [mq[768]]: {
       marginTop: '1.5em',
-      flexDirection: 'row',
     },
   },
   nftContainer: {
-    marginTop: '1.5em',
+    margin: '0.5em',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '6em',
+    height: '6em',
+    borderWidth: '1em ',
+    borderColor: 'linear-gradient(0.6turn,rgba(247,214,55),rgba(47,207,87))',
+    borderRadius: 50,
+    boxShadow: '0px 0px 10px #ccc',
     [mq[768]]: {
       marginTop: '2.5em',
       flexDirection: 'row',

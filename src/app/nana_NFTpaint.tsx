@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import Drawer from 'react-bottom-drawer'
 import { useNavigate } from 'react-router'
+import { Button } from 'src/components/buttons/Button'
 import { Box } from 'src/components/layout/Box'
 import { mq, useIsMobile } from 'src/styles/mediaQueries'
 import { Stylesheet } from 'src/styles/types'
@@ -15,10 +16,6 @@ export function NFTpaint() {
   const onClose = useCallback(() => {
     setIsVisible(false)
   }, [])
-
-  const onClickCreateNew = () => {
-    navigate('/setup/NFTpaint')
-  }
 
   const nfts = [
     {
@@ -36,14 +33,14 @@ export function NFTpaint() {
   ]
 
   return (
-    <Box direction="column" justify="start" styles={style.frame}>
+    <Box direction="column" justify="start">
       <div css={style.topPadding}></div>
       <Box direction="column" justify="center" align="center">
         <img src="../static/My-NFT-Paint.svg"></img>
       </Box>
-      <button className="open-btn" onClick={openDrawer}>
-        SHOW ME THE DIALOG!
-      </button>
+      <Button onClick={openDrawer}>
+        <img src="../defg.svg" />
+      </Button>
       <Drawer duration={250} hideScrollbars={true} onClose={closeDrawer} isVisible={isVisible}>
         <Box direction="row" justify="center" align="center">
           <div css={style.nftContainer}>
@@ -58,11 +55,6 @@ export function NFTpaint() {
 }
 
 const style: Stylesheet = {
-  frame: {
-    minHeight: '100vh',
-    backgorund: 'blue',
-    backgroundImage: `url("static/celo-hero.jpg")`,
-  },
   topPadding: {
     height: '24pt',
   },
